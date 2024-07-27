@@ -13,11 +13,15 @@ type LinkList struct {
 	head *Node
 }
 
-func createLinkList() *LinkList {
+func CreateLinkList() *LinkList {
 	return &LinkList{}
 }
 
-func (list *LinkList) insertAtFront(data int32) {
+func xyz() int32 {
+	return 10
+}
+
+func (list *LinkList) InsertAtFront(data int32) {
 	if list.head == nil {
 		newNode := &Node{data: data, next: nil}
 		list.head = newNode
@@ -28,7 +32,7 @@ func (list *LinkList) insertAtFront(data int32) {
 	list.head = newNode
 }
 
-func (list *LinkList) print() {
+func (list *LinkList) Print() {
 	var current *Node = list.head
 	for current != nil {
 		fmt.Printf("%d -> ", current.data)

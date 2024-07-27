@@ -8,10 +8,10 @@ import (
 
 func main() {
 	var myPlaylist L.LinkList
-	myPlaylist2 := L.createLinkList()
-	myPlaylist2.insertAtFront(20)
-	myPlaylist2.insertAtFront(10)
-	myPlaylist2.print()
+	myPlaylist2 := L.CreateLinkList()
+	myPlaylist2.InsertAtFront(20)
+	myPlaylist2.InsertAtFront(10)
+	myPlaylist2.Print()
 
 	fmt.Printf("myPlaylist2: %v\n", myPlaylist)
 	fmt.Println("hello ds")
