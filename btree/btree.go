@@ -18,42 +18,48 @@ func CreateBTree() *BTree {
 	return &BTree{}
 }
 
-func (root *BTree) Insert(data int32) {
-	if root.head == nil {
-		newNode := &TreeNode{data: data, left: nil, right: nil}
-		root.head = newNode
-		return
+func (btree *BTree) Insert(data int32) {
+	if btree.head == nil {
+		btree.head = &TreeNode{data: data, left: nil, right: nil}
+	} else {
+		btree.head.insert(data)
 	}
+}
 
-	var temp *TreeNode = root.head
-	for temp != nil {
-		if data < temp.data {
-			temp = temp.left
+func (root *TreeNode) insert(data int32) {
+	if data <= root.data {
+		if root.left == nil {
+			root.left = &TreeNode{data: data, left: nil, right: nil}
+		} else {
+			root.left.insert(data)
 		}
 
-		if data > temp.data {
-			temp = temp.right
+	} else if data > root.data {
+		if root.right == nil {
+			root.right = &TreeNode{data: data, left: nil, right: nil}
+		} else {
+			root.right.insert(data)
 		}
 	}
-
-	temp = &TreeNode{data: data, left: nil, right: nil}
 }
 
 func (root *BTree) InOrder() {
-	root.inOrder(root.head)
+	root.head.inOrder()
 }
 
-func (root *BTree) inOrder(node *TreeNode) {
-	var current *TreeNode = root.head
-
-	if current.left != nil {
-		root.inOrder(current.left)
+func (root *TreeNode) inOrder() {
+	if root == nil {
+		return
 	}
 
-	fmt.Println("data =>", current.data)
+	if root.left != nil {
+		root.left.inOrder()
+	}
 
-	if current.right != nil {
-		root.inOrder(current.right)
+	fmt.Println("data =>", root.data)
+
+	if root.right != nil {
+		root.right.inOrder()
 	}
 
 	fmt.Println()
