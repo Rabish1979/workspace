@@ -10,6 +10,13 @@
             "request": "launch",
             "mode": "debug",
             "program": "C:\\Users\\krabish\\workspace\\dstest\\dstest.go"
+        },
+        {
+            "name": "DebugArray Go",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "C:\\Users\\krabish\\workspace\\array\\array.go"
         }
     ]
 }
