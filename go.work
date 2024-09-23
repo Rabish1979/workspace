@@ -4,5 +4,6 @@ use (
 	./array
 	./btree
 	./dstest
+	./functions
 	./linklist
 )
