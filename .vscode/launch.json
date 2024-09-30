@@ -16,7 +16,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "C:\\Users\\krabish\\workspace\\functions\\functions.go"
+            "program": "C:\\Users\\krabish\\workspace\\dp\\dp.go"
         }
     ]
 }
